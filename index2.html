@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<!--Viết hàm insertNumberToArray() nhận vào một mảng các số-->
+<!--nguyên, một số nguyên x, và một số nguyên vị trí index. Hàm-->
+<!--trả về mảng ban đầu nếu vị trí index có giá trị nhỏ hơn 0 hoặc-->
+<!--lớn hơn chiều dài mảng. Nếu không thì trả về mảng mới đã-->
+<!--được thêm số x vào vị trí index. (không dùng hàm có sẵn để-->
+<!--tính)-->
+
+<script>
+    function insertNumberToArray(arr, number, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+        for (let i = arr.length - 1; i >= index; i--) {
+            arr[i + 1] = arr[i];
+        }
+        arr[index] = number;
+        return arr;
+    }
+
+    let arr = [2, 4, 7, 7, 4, 9, 5];
+    let number = 20;
+    let index = 3;
+
+    console.log(insertNumberToArray(arr, number, index));
+</script>
+</body>
+</html>
